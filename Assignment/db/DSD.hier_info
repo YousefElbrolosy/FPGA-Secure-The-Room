@@ -1,0 +1,141 @@
+|Assignment
+X[0] => adder41:stage0.x[0]
+X[1] => adder41:stage0.x[1]
+X[2] => adder41:stage0.x[2]
+X[3] => adder41:stage0.x[3]
+Y[0] => adder41:stage0.y[0]
+Y[1] => adder41:stage0.y[1]
+Y[2] => adder41:stage0.y[2]
+Y[3] => adder41:stage0.y[3]
+Sout[0] << adder41:stage0.s[0]
+Sout[1] << adder41:stage0.s[1]
+Sout[2] << adder41:stage0.s[2]
+Sout[3] << adder41:stage0.s[3]
+Sout[4] << adder41:stage0.Cout
+BCDO[0] << BCDO[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[1] << BCDO[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[2] << BCDO[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[3] << BCDO[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[4] << BCDO[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[5] << BCDO[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[6] << BCDO[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[7] << BCDO[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[8] << BCDO[8]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[9] << BCDO[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[10] << BCDO[10]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[11] << BCDO[11]$latch.DB_MAX_OUTPUT_PORT_TYPE
+BCDO[12] << <GND>
+BCDO[13] << BCDO[13]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Assignment|adder41:stage0
+Cin => fulladd1:stage0.Cin
+x[0] => fulladd1:stage0.x
+x[1] => fulladd1:stage1.x
+x[2] => fulladd1:stage2.x
+x[3] => fulladd1:stage3.x
+y[0] => fulladd1:stage0.y
+y[1] => fulladd1:stage1.y
+y[2] => fulladd1:stage2.y
+y[3] => fulladd1:stage3.y
+s[0] <= fulladd1:stage0.s
+s[1] <= fulladd1:stage1.s
+s[2] <= fulladd1:stage2.s
+s[3] <= fulladd1:stage3.s
+Cout <= fulladd1:stage3.Cout
+
+
+|Assignment|adder41:stage0|fulladd1:stage0
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Assignment|adder41:stage0|fulladd1:stage1
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Assignment|adder41:stage0|fulladd1:stage2
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Assignment|adder41:stage0|fulladd1:stage3
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Assignment|BCD:stage1
+X[0] => LessThan0.IN8
+X[0] => Add0.IN8
+X[0] => S.DATAA
+X[1] => LessThan0.IN7
+X[1] => Add0.IN7
+X[1] => S.DATAA
+X[2] => LessThan0.IN6
+X[2] => Add0.IN6
+X[2] => S.DATAA
+X[3] => LessThan0.IN5
+X[3] => Add0.IN5
+X[3] => S.DATAA
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Assignment|BCD:stage2
+X[0] => LessThan0.IN8
+X[0] => Add0.IN8
+X[0] => S.DATAA
+X[1] => LessThan0.IN7
+X[1] => Add0.IN7
+X[1] => S.DATAA
+X[2] => LessThan0.IN6
+X[2] => Add0.IN6
+X[2] => S.DATAA
+X[3] => LessThan0.IN5
+X[3] => Add0.IN5
+X[3] => S.DATAA
+S[0] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] <= S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+
